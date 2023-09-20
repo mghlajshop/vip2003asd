@@ -1,0 +1,41 @@
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>الانتقال إلى WhatsApp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<script>function openWhatsApp() {
+  // تحقق مما إذا كان الحقل فارغًا
+  if (document.getElementById("phone").value === "") {
+    alert("الرجاء إدخال رقم الهاتف.");
+    return;
+  }
+
+  // إنشاء رابط WhatsApp
+  const link = document.createElement("a");
+  link.href = "https://wa.me/" + document.getElementById("phone").value;
+  link.textContent = "افتح في WhatsApp";
+
+  // فتح الرابط
+  link.click();
+}
+</script>
+
+<style>
+    @media (max-width: 768px) {
+      body {
+        width: 100%;
+      }
+    }
+  </style>
+
+  
+
+<body>
+  <form action="#">
+    <label for="phone">أدخل رقم الهاتف:</label>
+    <input type="text" name="phone" id="phone" placeholder="+966500000000" required>
+    <button type="submit" onclick="openWhatsApp()">إرسال</button>
+  </form>
+</body>
+</html>
